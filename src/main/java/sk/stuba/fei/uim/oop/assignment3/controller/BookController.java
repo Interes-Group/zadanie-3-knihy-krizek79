@@ -1,9 +1,9 @@
 package sk.stuba.fei.uim.oop.assignment3.controller;
 
-import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
 import sk.stuba.fei.uim.oop.assignment3.service.api.BookService;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.attributes.BookAmount;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.attributes.BookLendCount;
@@ -48,6 +48,11 @@ public class BookController {
                 .stream()
                 .map(BookResponse::new)
                 .collect(Collectors.toList());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<BookResponse> getBookById(@PathVariable("id") Long id) throws NotFoundException {
+        return new ResponseEntity<>(new BookResponse(bookService.getBookById(id)), HttpStatus.OK);
     }
 
     @GetMapping("/{id}/amount")
