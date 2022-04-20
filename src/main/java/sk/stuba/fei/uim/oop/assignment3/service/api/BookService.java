@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface BookService {
 
-    Book addBook(BookRequest request);
+    Book addBook(BookRequest request) throws NotFoundException;
     Book updateBook(Long id, BookUpdateRequest updateRequest) throws NotFoundException;
     void deleteBook(Long id) throws NotFoundException;
     List<Book> getAllBooks();

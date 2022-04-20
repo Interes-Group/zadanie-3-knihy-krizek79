@@ -1,8 +1,9 @@
 package sk.stuba.fei.uim.oop.assignment3.service.impl;
 
 import org.springframework.stereotype.Service;
-import sk.stuba.fei.uim.oop.assignment3.model.Book;
 import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
+import sk.stuba.fei.uim.oop.assignment3.model.Author;
+import sk.stuba.fei.uim.oop.assignment3.model.Book;
 import sk.stuba.fei.uim.oop.assignment3.repository.BookRepository;
 import sk.stuba.fei.uim.oop.assignment3.service.api.AuthorService;
 import sk.stuba.fei.uim.oop.assignment3.service.api.BookService;
@@ -23,8 +24,9 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book addBook(BookRequest request) {
-        return bookRepository.save(new Book(request));
+    public Book addBook(BookRequest request) throws NotFoundException{
+        Author author = authorService.getAuthorById(request.getAuthor());
+        return bookRepository.save(new Book(request, author));
     }
 
     @Override
@@ -36,7 +38,7 @@ public class BookServiceImpl implements BookService {
         if (updateRequest.getDescription() != null) {
             book.setDescription(updateRequest.getDescription());
         }
-        if (updateRequest.getAuthorId() != null) {
+        if (updateRequest.getAuthor() != null) {
             book.setAuthor(authorService.getAuthorById(id));
         }
         if (updateRequest.getPages() != null) {

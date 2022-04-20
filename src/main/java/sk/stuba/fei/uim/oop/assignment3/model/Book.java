@@ -30,10 +30,10 @@ public class Book {
 
     private Integer lendCount;
 
-    public Book(BookRequest request) {
+    public Book(BookRequest request, Author author) {
         this.name = request.getName();
         this.description = request.getDescription();
-        this.author = request.getAuthor();
+        this.author = author;
         this.pages = request.getPages();
         this.amount = request.getAmount();
         this.lendCount = request.getLendCount();

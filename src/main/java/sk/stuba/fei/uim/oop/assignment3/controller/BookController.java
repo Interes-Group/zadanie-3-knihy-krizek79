@@ -25,7 +25,7 @@ public class BookController {
     }
 
     @PostMapping
-    public ResponseEntity<BookResponse> addBook(@RequestBody BookRequest request) {
+    public ResponseEntity<BookResponse> addBook(@RequestBody BookRequest request) throws NotFoundException {
         return new ResponseEntity<>(new BookResponse(bookService.addBook(request)),
                 HttpStatus.CREATED);
     }
