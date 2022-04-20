@@ -1,19 +1,18 @@
 package sk.stuba.fei.uim.oop.assignment3.controller;
 
-import javassist.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.request.AuthorRequest;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.updateRequest.AuthorUpdateRequest;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.response.AuthorResponse;
+import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
 import sk.stuba.fei.uim.oop.assignment3.service.api.AuthorService;
+import sk.stuba.fei.uim.oop.assignment3.wrapper.request.AuthorRequest;
+import sk.stuba.fei.uim.oop.assignment3.wrapper.response.AuthorResponse;
+import sk.stuba.fei.uim.oop.assignment3.wrapper.updateRequest.AuthorUpdateRequest;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Controller
+@RestController
 @RequestMapping("/author")
 public class AuthorController {
 

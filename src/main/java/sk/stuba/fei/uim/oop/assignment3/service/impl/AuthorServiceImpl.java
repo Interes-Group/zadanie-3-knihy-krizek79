@@ -1,7 +1,7 @@
 package sk.stuba.fei.uim.oop.assignment3.service.impl;
 
-import javassist.NotFoundException;
 import org.springframework.stereotype.Service;
+import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.request.AuthorRequest;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.updateRequest.AuthorUpdateRequest;
 import sk.stuba.fei.uim.oop.assignment3.model.Author;
@@ -49,7 +49,10 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public Author getAuthorById(Long id) throws NotFoundException {
-        return authorRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException(null));
+        Author author = authorRepository.findAuthorById(id);
+        if (author == null) {
+            throw new NotFoundException();
+        }
+        return author;
     }
 }

@@ -1,8 +1,8 @@
 package sk.stuba.fei.uim.oop.assignment3.service.impl;
 
-import javassist.NotFoundException;
 import org.springframework.stereotype.Service;
 import sk.stuba.fei.uim.oop.assignment3.model.Book;
+import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
 import sk.stuba.fei.uim.oop.assignment3.repository.BookRepository;
 import sk.stuba.fei.uim.oop.assignment3.service.api.AuthorService;
 import sk.stuba.fei.uim.oop.assignment3.service.api.BookService;
@@ -58,8 +58,11 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book getBookById(Long id) throws NotFoundException {
-        return bookRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException(null));
+        Book book = bookRepository.findBookById(id);
+        if (book == null) {
+            throw new NotFoundException();
+        }
+        return book;
     }
 
     @Override

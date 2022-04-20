@@ -1,6 +1,6 @@
 package sk.stuba.fei.uim.oop.assignment3.service.api;
 
-import javassist.NotFoundException;
+import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
 import sk.stuba.fei.uim.oop.assignment3.model.Book;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.request.BookRequest;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.updateRequest.BookUpdateRequest;
