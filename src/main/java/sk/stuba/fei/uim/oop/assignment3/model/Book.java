@@ -21,7 +21,7 @@ public class Book {
 
     private String description;
 
-    @OneToOne
+    @ManyToOne
     private Author author;
 
     private Integer pages;

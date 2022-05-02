@@ -38,10 +38,11 @@ public class BookServiceImpl implements BookService {
         if (updateRequest.getDescription() != null) {
             book.setDescription(updateRequest.getDescription());
         }
-        if (updateRequest.getAuthor() != null) {
-            book.setAuthor(authorService.getAuthorById(id));
+        if (updateRequest.getAuthor() != null && updateRequest.getAuthor() != 0) {
+            var author = authorService.getAuthorById(updateRequest.getAuthor());
+            book.setAuthor(author);
         }
-        if (updateRequest.getPages() != null) {
+        if (updateRequest.getPages() != null && updateRequest.getPages() != 0) {
             book.setPages(updateRequest.getPages());
         }
         return bookRepository.save(book);
