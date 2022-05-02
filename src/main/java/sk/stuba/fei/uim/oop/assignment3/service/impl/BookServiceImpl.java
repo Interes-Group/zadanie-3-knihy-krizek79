@@ -26,7 +26,9 @@ public class BookServiceImpl implements BookService {
     @Override
     public Book addBook(BookRequest request) throws NotFoundException{
         Author author = authorService.getAuthorById(request.getAuthor());
-        return bookRepository.save(new Book(request, author));
+        var book = new Book(request, author);
+        author.getBooks().add(book);
+        return bookRepository.save(book);
     }
 
     @Override
@@ -51,6 +53,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public void deleteBook(Long id) throws NotFoundException {
         Book book = getBookById(id);
+        book.getAuthor().getBooks().remove(book);
         bookRepository.delete(book);
     }
 

@@ -23,7 +23,7 @@ public class Author {
 
     private String surname;
 
-    @OneToMany
+    @OneToMany(orphanRemoval = true)
     private List<Book> books;
 
     public Author(AuthorRequest request) {
