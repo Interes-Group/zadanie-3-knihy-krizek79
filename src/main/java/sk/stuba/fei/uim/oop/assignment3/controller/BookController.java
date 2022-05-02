@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
 import sk.stuba.fei.uim.oop.assignment3.service.api.BookService;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.attributes.BookAmount;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.attributes.BookLendCount;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.request.BookRequest;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.response.BookResponse;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.updateRequest.BookUpdateRequest;
@@ -55,13 +54,19 @@ public class BookController {
         return new ResponseEntity<>(new BookResponse(bookService.getBookById(id)), HttpStatus.OK);
     }
 
+    @PostMapping("/{id}/amount")
+    public BookAmount addBookAmount(@PathVariable("id") Long id,
+                                    @RequestBody BookAmount bookAmount) throws NotFoundException {
+        return new BookAmount(bookService.addBookAmount(id, bookAmount));
+    }
+
     @GetMapping("/{id}/amount")
     public BookAmount getBookAmount(@PathVariable("id") Long id) throws NotFoundException {
         return new BookAmount(bookService.getBookAmount(id));
     }
 
-    @GetMapping("/{id}/lend")
-    public BookLendCount getBookLendCount(@PathVariable("id") Long id) throws NotFoundException {
-        return new BookLendCount(bookService.getBookLendCount(id));
+    @GetMapping("/{id}/lendCount")
+    public BookAmount getBookLendCount(@PathVariable("id") Long id) throws NotFoundException {
+        return new BookAmount(bookService.getBookLendCount(id));
     }
 }

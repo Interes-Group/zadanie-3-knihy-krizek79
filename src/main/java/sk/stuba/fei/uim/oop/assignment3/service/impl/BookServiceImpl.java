@@ -7,6 +7,7 @@ import sk.stuba.fei.uim.oop.assignment3.model.Book;
 import sk.stuba.fei.uim.oop.assignment3.repository.BookRepository;
 import sk.stuba.fei.uim.oop.assignment3.service.api.AuthorService;
 import sk.stuba.fei.uim.oop.assignment3.service.api.BookService;
+import sk.stuba.fei.uim.oop.assignment3.wrapper.attributes.BookAmount;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.request.BookRequest;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.updateRequest.BookUpdateRequest;
 
@@ -69,6 +70,15 @@ public class BookServiceImpl implements BookService {
             throw new NotFoundException();
         }
         return book;
+    }
+
+    @Override
+    public Integer addBookAmount(Long id, BookAmount bookAmount) throws NotFoundException {
+        var book = getBookById(id);
+        if (bookAmount != null && bookAmount.getAmount() != null) {
+            book.setAmount(book.getAmount() + bookAmount.getAmount());
+        }
+        return book.getAmount();
     }
 
     @Override

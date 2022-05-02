@@ -2,6 +2,7 @@ package sk.stuba.fei.uim.oop.assignment3.service.api;
 
 import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
 import sk.stuba.fei.uim.oop.assignment3.model.Book;
+import sk.stuba.fei.uim.oop.assignment3.wrapper.attributes.BookAmount;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.request.BookRequest;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.updateRequest.BookUpdateRequest;
 
@@ -14,6 +15,7 @@ public interface BookService {
     void deleteBook(Long id) throws NotFoundException;
     List<Book> getAllBooks();
     Book getBookById(Long id) throws NotFoundException;
+    Integer addBookAmount(Long id, BookAmount bookAmount) throws NotFoundException;
     Integer getBookAmount(Long id) throws NotFoundException;
     Integer getBookLendCount(Long id) throws NotFoundException;
 }
