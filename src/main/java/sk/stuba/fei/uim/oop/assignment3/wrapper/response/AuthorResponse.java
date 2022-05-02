@@ -19,8 +19,6 @@ public class AuthorResponse {
         this.name = author.getName();
         this.surname = author.getSurname();
         this.books = new ArrayList<>();
-        for (var book: author.getBooks()) {
-            this.books.add(book.getId());
-        }
+        author.getBooks().forEach(book -> books.add(book.getId()));
     }
 }

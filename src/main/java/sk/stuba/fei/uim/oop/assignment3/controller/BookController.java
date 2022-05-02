@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
 import sk.stuba.fei.uim.oop.assignment3.service.api.BookService;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.attributes.BookAmount;
+import sk.stuba.fei.uim.oop.assignment3.wrapper.attribute.BookAmount;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.request.BookRequest;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.response.BookResponse;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.updateRequest.BookUpdateRequest;

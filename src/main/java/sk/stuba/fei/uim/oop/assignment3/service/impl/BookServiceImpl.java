@@ -7,7 +7,7 @@ import sk.stuba.fei.uim.oop.assignment3.model.Book;
 import sk.stuba.fei.uim.oop.assignment3.repository.BookRepository;
 import sk.stuba.fei.uim.oop.assignment3.service.api.AuthorService;
 import sk.stuba.fei.uim.oop.assignment3.service.api.BookService;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.attributes.BookAmount;
+import sk.stuba.fei.uim.oop.assignment3.wrapper.attribute.BookAmount;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.request.BookRequest;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.updateRequest.BookUpdateRequest;
 

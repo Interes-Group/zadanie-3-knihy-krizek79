@@ -1,4 +1,4 @@
-package sk.stuba.fei.uim.oop.assignment3.wrapper.attributes;
+package sk.stuba.fei.uim.oop.assignment3.wrapper.attribute;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
