@@ -15,6 +15,9 @@ public class ListResponse {
     public ListResponse(sk.stuba.fei.uim.oop.assignment3.model.List list) {
         this.id = list.getId();
         this.lendingList = new ArrayList<>();
+        if (list.getLendingList() != null) {
+            list.getLendingList().forEach(book -> lendingList.add(new BookResponse(book)));
+        }
         this.lended = list.getLended();
     }
 }
