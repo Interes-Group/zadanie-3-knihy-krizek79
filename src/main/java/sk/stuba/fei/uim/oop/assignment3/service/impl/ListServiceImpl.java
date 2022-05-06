@@ -1,6 +1,7 @@
 package sk.stuba.fei.uim.oop.assignment3.service.impl;
 
 import org.springframework.stereotype.Service;
+import sk.stuba.fei.uim.oop.assignment3.dto.request.BookIdRequest;
 import sk.stuba.fei.uim.oop.assignment3.exception.IllegalOperationException;
 import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
 import sk.stuba.fei.uim.oop.assignment3.model.Book;
@@ -8,7 +9,6 @@ import sk.stuba.fei.uim.oop.assignment3.model.List;
 import sk.stuba.fei.uim.oop.assignment3.repository.ListRepository;
 import sk.stuba.fei.uim.oop.assignment3.service.api.BookService;
 import sk.stuba.fei.uim.oop.assignment3.service.api.ListService;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.request.BookIdRequest;
 
 import java.util.ArrayList;
 

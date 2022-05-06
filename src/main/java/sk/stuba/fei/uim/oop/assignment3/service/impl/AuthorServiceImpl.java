@@ -1,9 +1,9 @@
 package sk.stuba.fei.uim.oop.assignment3.service.impl;
 
 import org.springframework.stereotype.Service;
+import sk.stuba.fei.uim.oop.assignment3.dto.request.AuthorRequest;
+import sk.stuba.fei.uim.oop.assignment3.dto.updateRequest.AuthorUpdateRequest;
 import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.request.AuthorRequest;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.updateRequest.AuthorUpdateRequest;
 import sk.stuba.fei.uim.oop.assignment3.model.Author;
 import sk.stuba.fei.uim.oop.assignment3.repository.AuthorRepository;
 import sk.stuba.fei.uim.oop.assignment3.service.api.AuthorService;

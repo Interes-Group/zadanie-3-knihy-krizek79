@@ -3,12 +3,12 @@ package sk.stuba.fei.uim.oop.assignment3.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import sk.stuba.fei.uim.oop.assignment3.dto.attribute.BookAmount;
+import sk.stuba.fei.uim.oop.assignment3.dto.request.BookRequest;
+import sk.stuba.fei.uim.oop.assignment3.dto.response.BookResponse;
+import sk.stuba.fei.uim.oop.assignment3.dto.updateRequest.BookUpdateRequest;
 import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
 import sk.stuba.fei.uim.oop.assignment3.service.api.BookService;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.attribute.BookAmount;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.request.BookRequest;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.response.BookResponse;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.updateRequest.BookUpdateRequest;
 
 import java.util.List;
 import java.util.stream.Collectors;

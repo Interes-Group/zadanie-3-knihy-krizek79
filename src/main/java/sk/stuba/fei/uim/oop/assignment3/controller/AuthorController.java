@@ -3,11 +3,11 @@ package sk.stuba.fei.uim.oop.assignment3.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import sk.stuba.fei.uim.oop.assignment3.dto.request.AuthorRequest;
+import sk.stuba.fei.uim.oop.assignment3.dto.response.AuthorResponse;
+import sk.stuba.fei.uim.oop.assignment3.dto.updateRequest.AuthorUpdateRequest;
 import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
 import sk.stuba.fei.uim.oop.assignment3.service.api.AuthorService;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.request.AuthorRequest;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.response.AuthorResponse;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.updateRequest.AuthorUpdateRequest;
 
 import java.util.List;
 import java.util.stream.Collectors;

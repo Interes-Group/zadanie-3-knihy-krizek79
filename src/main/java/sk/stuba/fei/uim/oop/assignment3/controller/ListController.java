@@ -3,11 +3,11 @@ package sk.stuba.fei.uim.oop.assignment3.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import sk.stuba.fei.uim.oop.assignment3.dto.request.BookIdRequest;
+import sk.stuba.fei.uim.oop.assignment3.dto.response.ListResponse;
 import sk.stuba.fei.uim.oop.assignment3.exception.IllegalOperationException;
 import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
 import sk.stuba.fei.uim.oop.assignment3.service.api.ListService;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.request.BookIdRequest;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.response.ListResponse;
 
 import java.util.List;
 import java.util.stream.Collectors;

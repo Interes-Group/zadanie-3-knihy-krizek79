@@ -1,4 +1,4 @@
-package sk.stuba.fei.uim.oop.assignment3.wrapper.response;
+package sk.stuba.fei.uim.oop.assignment3.dto.response;
 
 import lombok.Getter;
 import sk.stuba.fei.uim.oop.assignment3.model.Author;

@@ -1,15 +1,15 @@
 package sk.stuba.fei.uim.oop.assignment3.service.impl;
 
 import org.springframework.stereotype.Service;
+import sk.stuba.fei.uim.oop.assignment3.dto.attribute.BookAmount;
+import sk.stuba.fei.uim.oop.assignment3.dto.request.BookRequest;
+import sk.stuba.fei.uim.oop.assignment3.dto.updateRequest.BookUpdateRequest;
 import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
 import sk.stuba.fei.uim.oop.assignment3.model.Author;
 import sk.stuba.fei.uim.oop.assignment3.model.Book;
 import sk.stuba.fei.uim.oop.assignment3.repository.BookRepository;
 import sk.stuba.fei.uim.oop.assignment3.service.api.AuthorService;
 import sk.stuba.fei.uim.oop.assignment3.service.api.BookService;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.attribute.BookAmount;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.request.BookRequest;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.updateRequest.BookUpdateRequest;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package sk.stuba.fei.uim.oop.assignment3.wrapper.updateRequest;
+package sk.stuba.fei.uim.oop.assignment3.dto.updateRequest;
 
 import lombok.Getter;
 import lombok.Setter;

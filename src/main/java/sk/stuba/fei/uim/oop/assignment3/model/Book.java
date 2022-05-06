@@ -3,7 +3,7 @@ package sk.stuba.fei.uim.oop.assignment3.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.request.BookRequest;
+import sk.stuba.fei.uim.oop.assignment3.dto.request.BookRequest;
 
 import javax.persistence.*;
 

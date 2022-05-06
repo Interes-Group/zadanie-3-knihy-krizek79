@@ -1,8 +1,8 @@
 package sk.stuba.fei.uim.oop.assignment3.service.api;
 
+import sk.stuba.fei.uim.oop.assignment3.dto.request.BookIdRequest;
 import sk.stuba.fei.uim.oop.assignment3.exception.IllegalOperationException;
 import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
-import sk.stuba.fei.uim.oop.assignment3.wrapper.request.BookIdRequest;
 
 import java.util.List;
 
