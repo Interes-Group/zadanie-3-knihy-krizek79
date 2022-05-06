@@ -51,6 +51,11 @@ public class ListServiceImpl implements ListService {
     @Override
     public void deleteList(Long id) throws NotFoundException {
         List list = getListById(id);
+        if (list.getLended()) {
+            for (var book: list.getLendingList()) {
+                book.setLendCount(book.getLendCount() - 1);
+            }
+        }
         listRepository.delete(list);
     }
 
