@@ -7,5 +7,5 @@ import lombok.Setter;
 @Setter
 public class BookIdRequest {
 
-    private Long bookId;
+    private Long id;
 }

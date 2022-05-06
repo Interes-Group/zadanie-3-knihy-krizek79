@@ -10,6 +10,8 @@ import sk.stuba.fei.uim.oop.assignment3.service.api.BookService;
 import sk.stuba.fei.uim.oop.assignment3.service.api.ListService;
 import sk.stuba.fei.uim.oop.assignment3.wrapper.request.BookIdRequest;
 
+import java.util.ArrayList;
+
 @Service
 public class ListServiceImpl implements ListService {
 
@@ -33,9 +35,13 @@ public class ListServiceImpl implements ListService {
         List list = getListById(id);
         if (list.getLended()) throw new IllegalOperationException();
 
-        Book book = bookService.getBookById(request.getBookId());
-        for (var book1: list.getLendingList()) {
-            if (book1 == book) throw new IllegalOperationException();
+        Book book = bookService.getBookById(request.getId());
+        if (list.getLendingList() != null) {
+            for (var book1: list.getLendingList()) {
+                if (book1 == book) throw new IllegalOperationException();
+            }
+        } else {
+            list.setLendingList(new ArrayList<>());
         }
         list.getLendingList().add(book);
 
@@ -51,10 +57,14 @@ public class ListServiceImpl implements ListService {
     @Override
     public void deleteBookFromList(Long id, BookIdRequest request) throws NotFoundException {
         List list = getListById(id);
-        list.getLendingList().forEach(book -> {
-            if (book.getId().equals(request.getBookId()))
-                list.getLendingList().remove(book);
-        });
+        if (list.getLendingList() != null) {
+            for (var book: list.getLendingList()) {
+                if (book.getId().equals(request.getId())) {
+                    list.getLendingList().remove(book);
+                    return;
+                }
+            }
+        }
     }
 
     @Override
